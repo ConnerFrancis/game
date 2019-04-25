@@ -3,6 +3,10 @@
   <head>
     <!-- Meta -->
     <meta charset="utf-8" />
+    <meta name="viewport" 
+      content="width=device-width, 
+      initial-scale=1.0, 
+      user-scalable=no" />
     <title>game lol</title>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
@@ -17,9 +21,72 @@
         width: 100vw;
         height: 100vh;
       }
+      /* Basic stylings */
+      body {
+        background: #000;
+        color: #fff;
+      }
+      /* Log */
+      #log {
+        /* Display */
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        height: 33vh;
+        width: 33vw;
+        resize: both;
+        overflow: hidden;
+        min-height: 5vw;
+        min-width: 5vw;
+        padding-bottom: 1em;
+        /* Font */
+        font-family: monospace;
+        /* Colors */
+        background-color: rgba(0,0,0,0.5);
+        border: 1px solid #fff;
+        /* Transitions */
+        opacity: 0.25;
+      }
+      #log:hover {
+        opacity: 1;
+      }
+      #log #log-top {
+        background-color: #fff;
+        color: #000;
+        width: 100%;
+        padding: 0.1em;
+        cursor: grab;
+      }
+      #log #log-content {
+        /* Display */
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        overflow-y: scroll;
+        width: 100%;
+        /* Font */
+        font-size: 10px;
+      }
+      #log #log-content div {
+        /* Display */
+        display: flex;
+        flex-direction: row;
+      }
+      #log #log-content div div:first-child {
+        /* Display */
+        width: 5ch;
+        /* Colors */
+        opacity: 0.5;
+      }
     </style>
   </head>
   <body>
-    
+    <div id="log">
+      <div id="log-top" draggable="true">Console</div>
+      <div id="log-content"></div>
+      <div id="frame"></div>
+    </div>
   </body>
 </html>
