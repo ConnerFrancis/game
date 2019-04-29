@@ -80,13 +80,17 @@
         /* Colors */
         opacity: 0.5;
       }
+      /* Game renderer */
+      canvas {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
     </style>
   </head>
   <body>
     <div id="log">
       <div id="log-top" draggable="true">Console</div>
       <div id="log-content"></div>
-      <div id="frame"></div>
     </div>
   </body>
 </html>

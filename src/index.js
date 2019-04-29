@@ -11,9 +11,12 @@ let cube = new THREE.Mesh(geom, mat)
 g.scene.add(cube)
 g.camera.position.z = 5
 
-Game.animate(g, () => {
-    cube.rotation.x += 0.1
-    cube.rotation.y += 0.1
-})
+const animate = () => {
+  requestAnimationFrame(animate)
+  cube.rotation.x += 0.01
+  cube.rotation.y += 0.02
+  g.renderer.render(g.scene, g.camera)
+}
+animate()
 
 export default g
